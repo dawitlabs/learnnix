@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ArrowLeft, ArrowRight, Check } from '@lucide/svelte';
+import { ArrowLeft, ArrowRight, Check, ChevronDown } from '@lucide/svelte';
 import { goto } from '$app/navigation';
 import LessonSidebar from '$lib/components/lesson-sidebar.svelte';
 import Quiz from '$lib/components/quiz.svelte';
@@ -30,10 +30,13 @@ function onKeydown(event: KeyboardEvent) {
 <svelte:window onkeydown={onKeydown} />
 
 <div class="lg:grid lg:grid-cols-[15rem_1fr] lg:gap-12">
-	<aside class="lg:sticky lg:top-14 lg:max-h-[calc(100dvh-3.5rem)] lg:overflow-y-auto lg:py-8 lg:pr-2">
+	<aside class="lg:sticky lg:top-14 lg:max-h-[calc(100dvh-3.5rem)] lg:overflow-y-auto lg:py-8 lg:pr-3 lg:[scrollbar-width:thin] lg:[scrollbar-color:var(--border)_transparent]">
 		<details class="group border-b border-border py-3 lg:hidden">
-			<summary class="flex cursor-pointer list-none items-center justify-between text-sm font-medium">
-				<span>All lessons</span>
+			<summary class="flex cursor-pointer list-none items-center justify-between text-sm font-medium [&::-webkit-details-marker]:hidden">
+				<span class="flex items-center gap-2">
+					<ChevronDown size={14} class="text-muted transition-transform group-open:rotate-180" />
+					All lessons
+				</span>
 				<span class="font-mono text-xs text-muted">{lesson.order}/{data.lessons.length}</span>
 			</summary>
 			<div class="pt-4">
