@@ -1,0 +1,17 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+	"files": {
+		"includes": [
+			"**",
+			"!**/*.css",
+			"!.svelte-kit/**",
+			"!build/**",
+			"!.vercel/**",
+			"!node_modules/**"
+		]
+	},
+	"formatter": { "indentStyle": "tab", "lineWidth": 100 },
+	"linter": { "rules": { "preset": "none" } },
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"javascript": { "formatter": { "quoteStyle": "single" } }
+}
